@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 Months of Love</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffb3b3, #ff6666);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1, h2, p {
+      margin: 20px 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .heart-button {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 30px 0;
+      background-color: #ff4d4d;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: transform 0.3s;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .heart-button:hover {
+      transform: scale(1.1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .sparkle-effect {
+      font-size: 24px;
+      animation: sparkle 3s infinite ease-in-out;
+    }
+    @keyframes sparkle {
+      0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+      50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+    }
+    .floating-hearts {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .floating-hearts div {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://img.icons8.com/emoji/48/000000/red-heart.png');
+      animation: float 6s linear infinite;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-200%);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1: Intro -->
+  <div id="page1">
+    <h1>HAPPY MONTHSARY MY LOVE!</h1>
+    <p>Here's a little something for you</p>
+    <a href="#page2" class="heart-button">❤️</a>
+  </div>
+
+  <!-- Page 2: Poem -->
+  <div id="page2" style="display:none;">
+    <h2>Syempre tula muna bago message</h2>
+    <p>Fifteen months of endless bliss,<br>
+    In every smile, in every kiss...</p>
+    <a href="#page3" class="heart-button">Eto na, message na</a>
+  </div>
+
+  <!-- Page 3: First Message -->
+  <div id="page3" style="display:none;">
+    <h2>15 months of love with you ♡</h2>
+    <p>Happy 15th monthsary my love!<br>
+    Sobrang thankful ako na dumating tayo sa punto na ito...</p>
+    <a href="#page4" class="heart-button">Next</a>
+  </div>
+
+  <!-- Page 4: Continuation -->
+  <div id="page4" style="display:none;">
+    <p>Every day with you feels like a beautiful journey filled with laughter, growth, and endless love...</p>
+    <a href="#page5" class="heart-button">Next</a>
+  </div>
+
+  <!-- Page 5: The Little Prince Message -->
+  <div id="page5" style="display:none;">
+    <p>In the novelette "The Little Prince", You serve as my rose...</p>
+    <a href="#page6" class="heart-button">Next</a>
+  </div>
+
+  <!-- Page 6: Final Message -->
+  <div id="page6" style="display:none;">
+    <h2 class="sparkle-effect">Happy 15th monthsary my love, you'll always be the one.</h2>
+    <div class="floating-hearts">
+      <div style="left: 20%; animation-delay: 0s;"></div>
+      <div style="left: 50%; animation-delay: 2s;"></div>
+      <div style="left: 80%; animation-delay: 4s;"></div>
+    </div>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('div[id^="page"]');
+    document.querySelectorAll('.heart-button').forEach((button, index) => {
+      button.addEventListener('click', function() {
+        pages[index].style.display = 'none';
+        pages[index + 1].style.display = 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
